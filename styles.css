@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0f1b;
+    color: #e5e7eb;
+    overflow-x: hidden;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff8c00, #ff2d55);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('https://source.unsplash.com/1600x900/?technology') center/cover fixed;
+    position: relative;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    position: relative;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* "Know Me More" Link */
+.know-more {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff8c00;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.know-more:hover {
+    color: #ff2d55;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 75vh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* Sections */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#about h2 {
+    margin-bottom: 30px; 
+}
+
+#about p {
+
+    line-height: 1.8;
+}
+/* Project Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding-top: 30px; 
+}
+
+/* Project Cards */
+.card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 45, 85, 0.5);
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#contact h2 {
+    margin-bottom: 20px; 
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* Contact Buttons */
+.contact-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    /* background: linear-gradient(45deg, #ff8c00, #ff2d55); */
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.4);
+    cursor: pointer;
+    outline: none;
+}
+
+.contact-buttons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 45, 85, 0.5);
+}
+
+/* Lucide Icons */
+.contact-buttons a svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: white;
+    stroke-width: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-In Elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
